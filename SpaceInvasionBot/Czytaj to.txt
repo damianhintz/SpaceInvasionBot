@@ -1,0 +1,10 @@
+﻿SpaceInvasionBot v1.0-beta
+Data publikacji: 6 maja 2016
+
+Nowe funkcje:
+
+** Zmiany (historia)
+Do zrobienia
+
+2008-05-22 v1.0
+* pierwsza wersja

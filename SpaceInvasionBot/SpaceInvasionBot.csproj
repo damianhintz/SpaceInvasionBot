@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09E8C181-6851-4E3F-82B0-99CE0B6287C5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpaceInvasionBot</RootNamespace>
+    <AssemblyName>SpaceInvasionBot</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\AllianceRecord.cs" />
+    <Compile Include="DAL\BuildingRecord.cs" />
+    <Compile Include="DAL\DB.cs" />
+    <Compile Include="DAL\DefenceRecord.cs" />
+    <Compile Include="DAL\FleetBase.cs" />
+    <Compile Include="DAL\FleetRecord.cs" />
+    <Compile Include="DAL\PlanetRecord.cs" />
+    <Compile Include="DAL\ReportRecord.cs" />
+    <Compile Include="DAL\ResearchRecord.cs" />
+    <Compile Include="DAL\ResourceRecord.cs" />
+    <Compile Include="DAL\TableRecord.cs" />
+    <Compile Include="DAL\UserRecord.cs" />
+    <Compile Include="Navigator.cs" />
+    <Compile Include="ObjectCopier.cs" />
+    <Compile Include="ObjectDumper.cs" />
+    <Compile Include="ObjectWriter.cs" />
+    <Compile Include="Parser\BuildingParser.cs" />
+    <Compile Include="Parser\DefenceParser.cs" />
+    <Compile Include="Parser\FleetParser.cs" />
+    <Compile Include="Parser\InternalBuildingParser.cs" />
+    <Compile Include="Parser\InternalCommandParser.cs" />
+    <Compile Include="Parser\InternalDefenceParser.cs" />
+    <Compile Include="Parser\InternalFleetParser.cs" />
+    <Compile Include="Parser\InternalOrderParser.cs" />
+    <Compile Include="Parser\InternalResearchParser.cs" />
+    <Compile Include="Parser\InternalResourceParser.cs" />
+    <Compile Include="Parser\MoveResourceParser.cs" />
+    <Compile Include="Parser\ObjectParser.cs" />
+    <Compile Include="Parser\OrderFleetParser.cs" />
+    <Compile Include="Parser\ReportBuildingParser.cs" />
+    <Compile Include="Parser\ReportDefenceParser.cs" />
+    <Compile Include="Parser\ReportFleetParser.cs" />
+    <Compile Include="Parser\ReportResearchParser.cs" />
+    <Compile Include="Parser\ReportResourceParser.cs" />
+    <Compile Include="Parser\ResearchParser.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table\Alliance.cs" />
+    <Compile Include="Table\Building.cs" />
+    <Compile Include="Table\Defence.cs" />
+    <Compile Include="Table\EnemyFleetMove.cs" />
+    <Compile Include="Table\Fleet.cs" />
+    <Compile Include="Table\FleetMove.cs" />
+    <Compile Include="Table\Order.cs" />
+    <Compile Include="Table\Planet.cs" />
+    <Compile Include="Table\Report.cs" />
+    <Compile Include="Table\Research.cs" />
+    <Compile Include="Table\Resource.cs" />
+    <Compile Include="Table\User.cs" />
+    <Compile Include="Worker\Builder.cs" />
+    <Compile Include="Worker\Commander.cs" />
+    <Compile Include="Worker\Defender.cs" />
+    <Compile Include="Worker\Harvester.cs" />
+    <Compile Include="Worker\Researcher.cs" />
+    <Compile Include="Worker\Scanner.cs" />
+    <Compile Include="Worker\Settler.cs" />
+    <Compile Include="Worker\Spy.cs" />
+    <Compile Include="Worker\Transporter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bot.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Czytaj to.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
