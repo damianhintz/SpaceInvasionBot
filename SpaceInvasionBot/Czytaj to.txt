@@ -1,5 +1,5 @@
 ﻿SpaceInvasionBot v1.0-beta
-Data publikacji: 6 maja 2016
+Data publikacji: 22 maja 2008
 
 Nowe funkcje:
 
